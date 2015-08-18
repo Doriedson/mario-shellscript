@@ -282,7 +282,7 @@ function LoadFase1 {
 
 		_ind=${_nuvemY[$_k]}
 
-		for (( _l=_ind; _l<(_ind + _nuvemDraw[0]); _l++ )); do
+		for (( _l=_ind; _l<_ind + _nuvemDraw[0]; _l++ )); do
 
 			_tmp0=$(( _l - _ind + 1))			
 			_tmp1=${#_nuvemDraw[$_tmp0]}
@@ -1652,7 +1652,7 @@ function ColisaoBloco {
 
 		_tmp2=$(( _blocoX + _blocoWidth )) #variavel para definir final do desenho do bloco (limpar)
 
-		for (( _k=_blocoY; _k<(_blocoY+_blocoHeight); _k++ )); do #limpa o desenho do bloco do buffer da fase
+		for (( _k=_blocoY; _k<_blocoY+_blocoHeight; _k++ )); do #limpa o desenho do bloco do buffer da fase
 			_fasel[$_k]="${_fasel[$_k]:0:$_blocoX}${_blocoClear}${_fasel[$_k]:$_tmp2}"
 		done
 
